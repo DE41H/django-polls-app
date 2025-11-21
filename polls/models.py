@@ -7,7 +7,7 @@ from django.contrib import admin
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField(name="date published", auto_now_add=True)
+    pub_date = models.DateTimeField(verbose_name="date published", default=timezone.now())
 
     def __str__(self) -> str:
         return self.question_text
